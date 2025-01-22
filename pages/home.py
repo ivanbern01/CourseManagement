@@ -1,10 +1,11 @@
 import flet as ft
 
-def home_page(container):
+def home_page(container, user_name):
     container.controls.append(
         ft.Column(
             [
-                ft.Text("Welcome, Bokbok", size=36, weight="bold", color=ft.colors.DEEP_PURPLE),
+                # Display the user's name dynamically
+                ft.Text(f"Welcome, {user_name}", size=36, weight="bold", color=ft.colors.DEEP_PURPLE),
                 ft.Row([
                     ft.Container(
                         content=ft.Column([
@@ -75,3 +76,4 @@ def home_page(container):
             alignment=ft.MainAxisAlignment.START
         )
     )
+    container.update()

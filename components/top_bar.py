@@ -1,6 +1,6 @@
 import flet as ft
 
-def create_top_bar(dark_mode, navigate_to):
+def create_top_bar(dark_mode, navigate_to, page, logout):
     # Colors based on dark mode
     bg_color = "#1E1E1E" if dark_mode else "#FFFFFF"
     text_color = "#FFFFFF" if dark_mode else "#000000"
@@ -78,7 +78,7 @@ def create_top_bar(dark_mode, navigate_to):
                             spacing=10,
                         ),
                         padding=10,
-                        on_click=lambda _: print("Logged out"),
+                        on_click=lambda _: logout(),  # Call logout function here
                     ),
                 ],
             ),
@@ -105,7 +105,7 @@ def create_top_bar(dark_mode, navigate_to):
                                         bgcolor="#6C63FF",
                                         radius=18,
                                     ),
-                                    on_click=toggle_dropdown,
+                                    on_click=toggle_dropdown,  # Toggle the dropdown when clicked
                                 ),
                                 ft.Container(
                                     content=dropdown_container,
